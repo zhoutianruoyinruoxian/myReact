@@ -4,3 +4,5 @@
 4.安装sass-loder => $ yarn add sass-loder --save
 5.安装node-sass => $ yarn add node-sass --save
 6.在dev和product文件module的rule内添加sass-loader配置
+7.安装react-router和react-router-dom
+8.安装babel-plugin-transform-decorators-legacy，用于resolve es6修饰器

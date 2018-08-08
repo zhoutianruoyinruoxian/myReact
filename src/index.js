@@ -1,7 +1,9 @@
-import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import route from './routes/route-index.jsx';
 import registerServiceWorker from './registerServiceWorker';
+import 'antd/dist/antd.css';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const Router = route();
+
+ReactDOM.render(Router, document.getElementById('root'));
 registerServiceWorker();
