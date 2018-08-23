@@ -1,20 +1,29 @@
 import React, { Component } from 'react';
 
-import ButtonRc from '@/ButtonRc';
-import logo from '../../logo.svg';
-import api from 'src/api';
-// import Button from 
-
+import Test from '@/Test/Test';
+import './style.scss'
 export default class Home extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      visible: true,
+    };
+  }
   componentDidMount() {
 
   }
+  click = () => {
+    this.setState({
+      visible: false,
+    })
+  }
   render() {
+    const { visible  } = this.state;
     return (
       <div className="home">
-        home
-      </div>
-      <ButtonRc/>
+        <Test visible={visible} />
+        <a onClick={this.click}>dfshgdgs</a>
+      </div >
     );
   }
 }
