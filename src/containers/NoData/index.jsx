@@ -3,7 +3,7 @@
  * @param {string} size 可选项（''，small）默认值（'')，目前有两种size展示不同的外观
  * @param {string} type 可选项（default，search，filter） 默认值（default）
  * @param {string} content 数据时展示的内容，根据type不同会有不同的默认值，任意type都可传入该参数自定义
- * @param {string} img 无数据时展示的图片，根据type不同会有不同的默认值，任意type都可传入该参数自定义
+ * @param {string|object(ReactDom)} img 无数据时展示的图片，根据type不同会有不同的默认值，任意type都可传入该参数自定义
  */
 
 import React from 'react';

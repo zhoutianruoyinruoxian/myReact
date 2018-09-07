@@ -1,3 +1,3 @@
 export default {
-  test: { url: '/api/server', method: 'GET', desc: '测试' },
+  test: { url: '/api/user', method: 'get', desc: '测试' },
 };

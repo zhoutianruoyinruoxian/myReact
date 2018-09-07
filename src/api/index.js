@@ -11,6 +11,15 @@ const isJsonFormat = (method) => {
 
 let api = {};
 const instance = axios.create(defaultOption);
+
+instance.interceptors.response.use((response) => {
+  // 对响应数据做点什么
+  return response.data;
+}, (error) => {
+  // 对响应错误做点什么
+  return Promise.reject(error);
+});
+
 Object.keys(apiList).forEach(o => {
   api[o] = (params, option) => {
     let opts = Object.assign({}, apiList[o], option);
@@ -22,6 +31,7 @@ Object.keys(apiList).forEach(o => {
     return instance(opts);
   };
 });
+
 
 export default api;
 

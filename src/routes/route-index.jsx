@@ -5,6 +5,7 @@ import App from '../App';
 
 import Home from 'pages/Home/Home';
 import Resume from 'pages/Resume/Resume';
+import Login from 'pages/Login';
 
 export default (store) => {
   return (
@@ -13,6 +14,7 @@ export default (store) => {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/my" component={Resume} />
+          <Route exact path="/login" component={Login} />
           {/* <Route exact path="/" render={() => (<div>home</div>)} />
           <Route exact path="/my" render={(e) => {console.log(e);return(<div>my</div>)}}  /> */}
         </Switch>

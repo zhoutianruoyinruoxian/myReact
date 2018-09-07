@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 
 import Test from '@/Test/Test';
-import './style.scss'
+import './style.scss';
+import api from 'api';
 export default class Home extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +11,9 @@ export default class Home extends Component {
     };
   }
   componentDidMount() {
-
+    api.test({ name: 'zhoutian', password: '222', confirmPassword: '123456' }).then(res => {
+      console.log(res);
+    });
   }
   click = () => {
     this.setState({
@@ -18,7 +21,7 @@ export default class Home extends Component {
     })
   }
   render() {
-    const { visible  } = this.state;
+    const { visible } = this.state;
     return (
       <div className="home">
         <Test visible={visible} />
