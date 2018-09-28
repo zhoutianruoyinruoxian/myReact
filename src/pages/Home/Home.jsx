@@ -24,7 +24,9 @@ export default class Home extends Component {
     const { visible } = this.state;
     return (
       <div className="home">
-        <Test visible={visible} />
+        <Test>
+          <div>111</div>
+        </Test>
         <a onClick={this.click}>dfshgdgs</a>
       </div >
     );

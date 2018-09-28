@@ -1,36 +1,21 @@
 import React, { Component } from 'react';
 
+const aaa = { a: 'v' };
 export default class Home extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
+    console.log(this, this.props, 333)
+    setTimeout(()=>{
+      console.log(this, this.props, 444)
+    },1)
     this.state = {
       destory: false,
     };
   }
-  componentWillReceiveProps(nextProps) {
-    console.log(232323232)
-    if (nextProps.visible) {
-      this.setState({
-        destory: false,
-      });
-    } else {
-      setTimeout(() => {
-      this.setState({
-        destory: true,
-      },
-      () => {
-        console.log(this.state.destory, 444);
-      });
-      }
-      , 1000)
-    }
 
-  }
   render() {
-    console.log(11222)
     return (
-      <div className={this.props.visible ? '' : 'none'}>
-        {!this.state.destory && <span>222</span>}
+      <div >{this.props.children}什么情况
       </div>
     );
   }

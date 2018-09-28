@@ -16,8 +16,10 @@ export default class Login extends Component {
   }
   login = () => {
     const { name, password } = this.state;
-    api.test({ name, password }).then(res => {
+    api.login({ name, password }).then(res => {
       Message.success(res.message);
+      // this.props.history.push()
+      api.test();
     });
   }
   render() {
@@ -39,7 +41,7 @@ export default class Login extends Component {
             });
           }}
         />
-        <Button onClick={this.login} />
+        <Button onClick={this.login} >登录</Button>
       </div >
     );
   }

@@ -1,12 +1,11 @@
 
-
-
 /**
  * @desc 将url的查询参数转为对象
  * @param {string} location location对象
  * @param {boolean} toNumber 是否把参数转为数字类型(例：'1' => 1),无法转为数字的不动（默认值false）
  */
 const urlParse = (location, toNumber = false) => {
+  if (typeof location.search !== 'string') throw new TypeError('location.search must be a string');
   const query = location.search.slice(1);
   let paramsList = [];
   let params = {};
