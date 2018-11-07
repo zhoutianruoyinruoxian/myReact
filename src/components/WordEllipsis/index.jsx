@@ -14,7 +14,7 @@ export default (props) => {
     throw new Error(`content must be ${'string'}`);
   }
 
-  if (content.length > length) {
+  if (length && content.length > length) {
     ifEllipsis = true;
     _content = content.slice(0, length) + '...';
   }

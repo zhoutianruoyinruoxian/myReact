@@ -1,4 +1,3 @@
-
 /**
  * @desc 将url的查询参数转为对象
  * @param {string} location location对象
@@ -52,8 +51,25 @@ const getHeight = (element, includePadding = false) => {
   }
 };
 
+
+
+const utf8_to_b64 = (str) => {
+  return window.btoa(unescape(encodeURIComponent(str)));
+};
+
+const b64_to_utf8 = (str) => {
+  return decodeURIComponent(escape(window.atob(str)));
+};
+//在js引擎内部,encodeURIComponent(str)相当于escape(unicodeToUTF8(str))
+//所以可以推导出unicodeToUTF8(str)等同于unescape(encodeURIComponent(str))
+
+
+
+
 export default {
   urlParse,
   getStyle,
   getHeight,
+  utf8_to_b64,
+  b64_to_utf8,
 };
