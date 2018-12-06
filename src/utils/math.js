@@ -1,3 +1,6 @@
+import match from './regExp/match.js';
+
+'use strict';
 
 class MathApi {
   constructor() {
@@ -9,11 +12,19 @@ class MathApi {
    * @param {number|string} number
    * @return {Boolean} true is odd false is even
    */
-  isOdd = (number) => {
+  isOdd(number) {
     if (typeof number !== 'number') return new TypeError('number must be a number');
     return (number & 1) === 1;
   }
+
+  /**
+   * @desc 将数字转换为千分制
+   */
+  toLocaleString(number) {
+    return number.replace(match.toLocaleString, '$&,');
+  }
+
 }
 
 
-export default (() => new MathApi())();
+export default () => new MathApi();

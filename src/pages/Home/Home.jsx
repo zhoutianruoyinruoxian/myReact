@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import 'src/redux';
 import Test from '@/Test/Test';
 import './style.scss';
 import api from 'api';

@@ -61,6 +61,14 @@ class DomApi {
 
     element.setAttribute(attr, value);
   };
+
+  domToString(node) {
+    let tmpNode = document.createElement('div');
+    tmpNode.appendChild(node);
+    let str = tmpNode.innerHTML;
+    tmpNode = node = null; // 解除引用，以便于垃圾回收
+    return str;
+  }
 }
 
 const $ = (element, dom = document) => {

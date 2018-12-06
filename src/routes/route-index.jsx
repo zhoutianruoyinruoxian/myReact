@@ -8,6 +8,9 @@ import Resume from 'pages/Resume/Resume';
 import Login from 'pages/User/Login';
 import Test from 'pages/Test';
 import Test2 from 'pages/Test2';
+import _WebGL from 'pages/WebGL/Test.jsx';
+import Decorater from 'pages/Decorater';
+
 
 export default (store) => {
   return (
@@ -19,6 +22,8 @@ export default (store) => {
           <Route exact path="/login" component={Login} />
           <Route exact path="/test" component={Test} />
           <Route exact path="/test2" component={Test2} />
+          <Route exact path="/wgl" component={_WebGL} />
+          <Route exact path="/decorater" component={Decorater} />
           {/* <Route exact path="/" render={() => (<div>home</div>)} />
           <Route exact path="/my" render={(e) => {console.log(e);return(<div>my</div>)}}  /> */}
         </Switch>
