@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router';
-import { BrowserRouter as Router, HashRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import App from '../App';
 
 import Home from 'pages/Home/Home';
@@ -14,7 +14,7 @@ import Decorater from 'pages/Decorater';
 
 export default (store) => {
   return (
-    <Router>
+    <BrowserRouter>
       <App>
         <Switch>
           <Route exact path="/" component={Home} />
@@ -28,7 +28,7 @@ export default (store) => {
           <Route exact path="/my" render={(e) => {console.log(e);return(<div>my</div>)}}  /> */}
         </Switch>
       </App>
-    </Router>
+    </BrowserRouter>
   );
 }
 

@@ -1,38 +1,26 @@
-import { combineReducers, createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import thunkMiddleware from 'redux-thunk';
+import modules from './modules';
+import reducerCreater from './config/reducerCreater';
+import mutationCreater from './config/mutationCreater';
 
-function visibilityFilter(state = 'SHOW_ALL', action) {
-  switch (action.type) {
-    case 'SET_VISIBILITY_FILTER':
-      return action.filter
-    default:
-      return state
-  }
-}
 
-function todos(state = [], action) {
-  switch (action.type) {
-    case 'ADD_TODO':
-      return [
-        ...state,
-        {
-          text: action.text,
-          completed: false
-        }
-      ]
-    case 'COMPLETE_TODO':
-      return state.map((todo, index) => {
-        if (index === action.index) {
-          return Object.assign({}, todo, {
-            completed: true
-          })
-        }
-        return todo
-      })
-    default:
-      return state
-  }
-}
+let middleware = [thunkMiddleware];
 
-let reducer = combineReducers({ visibilityFilter, todos });
-let store = createStore(reducer);
-console.log(store.getState(), 222)
+// if (process.env.NODE_ENV !== 'production') {
+//   const logger = ({ getState }) => next => action => {
+//     console.log('will dispatch', getState());
+//     next(action);
+//     console.log('state after dispatch', getState());
+//   };
+//   middleware = [...middleware, logger];
+// }
+
+export const reducers = reducerCreater(modules);
+const store = createStore(reducers, applyMiddleware(...middleware));
+
+
+
+export const mutationList = mutationCreater(store, modules);
+
+export default store;
