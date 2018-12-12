@@ -13,7 +13,7 @@ class MathApi {
    * @return {Boolean} true is odd false is even
    */
   isOdd(number) {
-    if (typeof number !== 'number') return new TypeError('number must be a number');
+    if (typeof number !== 'number') throw new TypeError('number must be a number');
     return (number & 1) === 1;
   }
 

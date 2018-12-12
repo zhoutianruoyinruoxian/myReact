@@ -14,13 +14,8 @@ const mutationCreater = ({ dispatch, getState }, modules) => {
   return mutationList;
 };
 
-const _dispatch = (dispatch, type) => (data) => {
-  dispatch(actionCreater(type, data))
-};
+const _dispatch = (dispatch, type) => (data) => dispatch(actionCreater(type, data));
 
-const actionCreater = (type, data) => ({
-  type,
-  data,
-});
+const actionCreater = (type, data) => ({ type, data });
 
 export default mutationCreater;

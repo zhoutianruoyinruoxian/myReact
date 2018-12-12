@@ -3,7 +3,7 @@ import 'src/redux';
 import './style.scss';
 import api from 'api';
 import { connect } from 'react-redux';
-import { mutationList } from 'src/redux';
+import { mapMutations } from 'src/redux';
 
 const mapStateToProps = (state, router) => {
   return {
@@ -12,7 +12,7 @@ const mapStateToProps = (state, router) => {
 }
 const mapDispatchToProps = () => {
   return {
-    changeTitle: mutationList.app.changeTitle,
+    changeTitle: mapMutations.app.changeTitle,
   }
 }
 
