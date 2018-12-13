@@ -7,14 +7,15 @@ import { mapMutations } from 'src/redux';
 
 const mapStateToProps = (state, router) => {
   return {
-    title: state.app.title
-  }
-}
+    title: state.app.title,
+  };
+};
+
 const mapDispatchToProps = () => {
   return {
     changeTitle: mapMutations.app.changeTitle,
-  }
-}
+  };
+};
 
 // const mapDispatchToProps2 = mapDispatchToPropsInit((mutations)=>{
 

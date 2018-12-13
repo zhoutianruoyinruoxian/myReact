@@ -1,6 +1,6 @@
 export default {
   state: {
-    title: 'default',
+    title: 'demo',
   },
   mutations: {
     changeTitle(setState, getState, title) {

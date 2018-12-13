@@ -26,7 +26,7 @@ Object.keys(apiList).forEach(o => {
     let opts = Object.assign({}, apiList[o], option);
     if (isJsonFormat(apiList[o].method)) {
       // opts.data = Object.assign({}, customGlobalParams, params);
-      if (!_.isPlainObject(params)) {//判断是否为一个普通的对象（如果是文件：formData则部是普通对象），不是普通对象不能合并
+      if (!_.isPlainObject(params)) {//判断是否为一个普通的对象（如果是文件：formData则不是普通对象），不是普通对象不能合并
         opts.data = params;
         // opts.headers = { 'content-type': 'application/json;charset=UTF-8' };//貌似没用，axios会自动加上headers
       } else {

@@ -1,22 +1,22 @@
 import { createStore, applyMiddleware } from 'redux';
-import thunkMiddleware from 'redux-thunk';
 import reducerCreater from './reducerCreater';
 import mutationCreater from './mutationCreater';
 import logger from './logger';
 
-let middleware = [thunkMiddleware];
 
 const defaultOption = {
   logger: false,
+  middleware: [],
 };
 
 const storeCreater = (modules, option = defaultOption) => {
   if (!modules || Object.prototype.toString.call(modules) !== '[object Object]') {
     throw new Error('parameter modules is required but not found!');
   }
+  let middleware = [];
 
   if (option.logger && logger) {
-    middleware = [...middleware, logger];
+    middleware = [...defaultOption.middleware, logger];
   }
 
   const reducers = reducerCreater(modules);
