@@ -2,7 +2,7 @@ import match from './regExp/match.js';
 
 'use strict';
 
-class CkeckType {
+class CheckType {
   constructor(content) {
     this.type = Object.prototype.toString.call(content);
     return this.getType();
@@ -19,4 +19,4 @@ class CkeckType {
 
 }
 
-export default (content) => new CkeckType(content);
+export default (content) => new CheckType(content);
