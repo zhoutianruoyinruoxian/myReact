@@ -3,7 +3,7 @@
  * @param {object|string} location|url location对象或者url字符串
  * @param {boolean} toNumber 是否把参数转为数字类型(例：'1' => 1),无法转为数字的不动（默认值false）
  */
-const urlParse = (location, toNumber = false) => {
+export const urlParse = (location, toNumber = false) => {
   const type = Object.prototype.toString.call(location);
   let query = null;
   if (type === '[object Location]') {

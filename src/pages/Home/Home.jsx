@@ -31,10 +31,34 @@ export default class Home extends Component {
   }
 
   componentDidMount() {
-    console.log(this.props)
+    // console.log(this.props)
     // api.test({ name: 'zhoutian', password: '222', confirmPassword: '123456' }).then(res => {
     //   console.log(res);
     // });
+
+    const a = {};
+    const b = new Proxy(a, {
+      get(obj, prop, proxy) {
+        console.log('get')
+        const res = Reflect.get(...arguments);
+        return res;
+      },
+      set(obj, prop, value, proxy) {
+        console.log('set')
+        const res = Reflect.set(...arguments);
+        return res;
+      }
+
+    })
+    console.log(b, 'b');
+    console.log(a, 'a');
+    b.f = 4;
+    console.log(b.f, 'b');
+    console.log(a.f, 'a');
+    a.f = 6;
+    console.log(b.f, 'b');
+    console.log(a.f, 'a');
+    b.h = 55
   }
 
   click = () => {

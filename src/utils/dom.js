@@ -19,6 +19,7 @@ class DomApi {
     element.removeEventListener(event, handler);
     return this;
   };
+
   bind = (element, event, callback) => {
     event.split(/\s+/).forEach(function (event) {
       element.addEventListener(event, callback);

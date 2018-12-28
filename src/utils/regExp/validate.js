@@ -1,10 +1,10 @@
 export default {
   sixSecondsNumber: {
-    pattern: /^(([1-5]?\d{1})|(60))$/,
+    pattern: /^(([1-5]?\d{1})|60)$/,
     message: '请填写60以内的数字',
   },
   hundredNumber: {
-    pattern: /^(([1-9]?\d{1})|(100))$/,
+    pattern: /^(([1-9]?\d{1})|100)$/,
     message: '请填写0~100间的数字',
   },
   moreThanZeroNumber: {
@@ -16,7 +16,7 @@ export default {
     message: '请填写正确的状态码',
   },
   httpUrl: {
-    pattern: /^(http:\/\/|https:\/\/)?(\w+\.){2,}(:\d{4})?((\/)?\w+){1}/,
+    pattern: /^(http:\/\/|https:\/\/)?(\w+\.){2,}\w+(:\d{4})?(\/\w*)*$/,
     message: '请填写正确的跳转路径',
   },
   url: {
