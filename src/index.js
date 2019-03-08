@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import { LocaleProvider } from 'antd';
+import zhCN from 'antd/lib/locale-provider/zh_CN';
 import route from './routes/route-index.jsx';
 import registerServiceWorker from './registerServiceWorker';
 // import 'antd/dist/antd.css';
@@ -26,7 +28,9 @@ const renderApp = () => {
   const Router = route();
   ReactDOM.render(
     <Provider store={store}>
-      {Router}
+      <LocaleProvider locale={zhCN}>
+        {Router}
+      </LocaleProvider>
     </Provider>,
     document.getElementById('root')
   );

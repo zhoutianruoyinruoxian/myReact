@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import utils from 'src/utils/utils.js';
-import A from './A';
 import type from 'src/utils/type';
 
 
