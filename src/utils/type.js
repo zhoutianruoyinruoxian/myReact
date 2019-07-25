@@ -1,7 +1,5 @@
 import match from './regExp/match.js';
 
-'use strict';
-
 class CheckType {
   constructor(content) {
     this.type = Object.prototype.toString.call(content);
